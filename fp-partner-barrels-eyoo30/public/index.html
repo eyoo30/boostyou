@@ -1,0 +1,176 @@
+<!--
+  Name: Eliott Yoo, John You
+  Date: 12/11/2021
+  Section: CSE 154 AE: Tim Mandzyuk & Nikola Bojanic
+
+  This is the index.html page for our BoostYou website. It includes the layout of the website and
+  all of the various potential viewings for the user. This is the basic structure for the BoostYou
+  website.
+-->
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>BoostYou</title>
+    <link rel='stylesheet' href="style.css">
+    <script src='script.js'></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>BoostYou</h1>
+      </div>
+      <nav>
+        <button id='home-btn'>Home</button>
+        <button id='profile-btn'>Profile</button>
+        <button id="login-btn">Login</button>
+        <button id="logout-btn" class="hidden">Logout</button>
+        <button id="create-btn">Create Account!</button>
+        <button id="listing-btn">Create Listing!</button>
+      </nav>
+    </header>
+
+    <main>
+      <article id='boost-data'>
+        <section id="listing-view">
+          <h2>Listings</h2>
+          <div id='listing-nav'>
+            <form>
+              <input type='text' id='search-bar' placeholder="Search Users">
+              <label for='rank-filter'></label>
+              <select id='rank-filter' name='rank-filter'>
+                <option selected value=''>Rank</option>
+                <option value="iron">Iron</option>
+                <option value="bronze">Bronze</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
+                <option value="platinum">Platinum</option>
+                <option value="diamond">Diamond</option>
+                <option value="master">Master</option>
+                <option value="grandmaster">Grand Master</option>
+                <option value="challenger">Challenger</option>
+              </select>
+
+              <select id="region-filter" name="region-filter">
+                <option value='' selected>Region</option>
+                <option value="BR">Brazil</option>
+                <option value="EUNE">Europe Nordic and East</option>
+                <option value="EUW">Europe West</option>
+                <option value="LAN">Latin America North</option>
+                <option value="LAS">Latine America South</option>
+                <option value="NA">North America</option>
+                <option value="OCE">Oceania</option>
+                <option value="RU">Russia</option>
+                <option value="TR">Turkey</option>
+                <option value="JP">Japan</option>
+                <option value="SEA">South East Asia</option>
+                <option value="KR">Korea</option>
+                <option value="CN">China</option>
+              </select>
+
+              <input type='number' id='price-filter' min='0' max='10000' placeholder='Max Price'>
+              <input type='number' id='stock-filter' min='0' max='10000' placeholder='Min Stock'>
+              <input id='search-and-filter' type="submit" value="Search!">
+            </form>
+          </div>
+          <div id="listings">
+
+          </div>
+        </section>
+
+        <section id="item" class="hidden">
+          <div id="item-display">
+
+          </div>
+          <form class='hidden' id='confirmation'>
+            <p>Please confirm your purchase!</p>
+            <label for="game-count">Games</label>
+            <input min="0" type="number" id="game-count" name="game-count" required>
+            <input class='button' id='cancel-purchase' type="button" value="Cancel">
+            <input class='button' id='purchase-confirmation' type="submit" value="Make Purchase!">
+          </form>
+        </section>
+
+        <section id="profile" class="hidden">
+          <section id="info">
+          </section>
+          <section id="transactions">
+            <h2>Transaction History</h2>
+          </section>
+        </section>
+
+        <section id='login-screen' class="hidden">
+          <h2>Login to your account!</h2>
+          <form id="login-form">
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Login!">
+            <p id='invalid-login' class="hidden">User info invalid</p>
+          </form>
+        </section>
+
+        <section id='creation-screen' class='hidden'>
+          <h2 id="create-header">Account Creation</h2>
+          <form id="create-form">
+            <label for="user-create">Username</label><br>
+            <input type="text" id="user-create" name="user-create" required><br>
+            <label for="pass-create">Password</label><br>
+            <input type="text" id="pass-create" name="pass-create" required><br>
+            <input id='create-submit' type="submit" value="Login!">
+            <p id="taken" class="hidden">User already taken</p>
+          </form>
+        </section>
+
+        <section id="listing-screen" class="hidden">
+          <h2 id="listing-header">Create a Listing!</h2>
+          <form id="listing-form">
+            <label for="rank-listing">Choose Your Rank</label><br>
+            <!-- <input type="text" id="rank-listing" name="rank-listing" required><br> -->
+            <select id="rank-listing" name="rank-listing" required>
+              <option value='' disabled selected> -- select an option -- </option>
+              <option value="iron">Iron</option>
+              <option value="bronze">Bronze</option>
+              <option value="silver">Silver</option>
+              <option value="gold">Gold</option>
+              <option value="platinum">Platinum</option>
+              <option value="diamond">Diamond</option>
+              <option value="master">Master</option>
+              <option value="grandmaster">Grand Master</option>
+              <option value="challenger">Challenger</option>
+            </select><br>
+            <label for="region-listing">Choose Your Region</label><br>
+            <!-- <input type="text" id="region-listing" name="region-listing" required><br> -->
+            <select id="region-listing" name="region-listing" required>
+              <option value='' disabled selected> -- select an option -- </option>
+              <option value="BR">Brazil</option>
+              <option value="EUNE">Europe Nordic and East</option>
+              <option value="EUW">Europe West</option>
+              <option value="LAN">Latin America North</option>
+              <option value="LAS">Latine America South</option>
+              <option value="NA">North America</option>
+              <option value="OCE">Oceania</option>
+              <option value="RU">Russia</option>
+              <option value="TR">Turkey</option>
+              <option value="JP">Japan</option>
+              <option value="SEA">South East Asia</option>
+              <option value="KR">Korea</option>
+              <option value="CN">China</option>
+            </select><br>
+            <label for="description">Add a Description</label><br>
+            <textarea rows="5" cols="80" id="description" maxlength="500" required></textarea><br>
+            <label for="price-listing">Price</label><br>
+            <input type="number" id="price-listing" min='0' name="price-listing" required><br>
+            <label for="stock-listing">Stock</label><br>
+            <input type="number" id="stock-listing" min='0' name="stock-listing" required><br>
+            <input id="listing-submit" type="submit" value="Upload Listing!">
+          </form>
+        </section>
+      </article>
+    </main>
+    <h2 id='error' class='hidden'>Internal Server Error: Come back later please!</h2>
+    <footer>
+    </footer>
+  </body>
+</html>

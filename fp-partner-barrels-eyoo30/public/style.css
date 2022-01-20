@@ -1,0 +1,104 @@
+/*
+Name: Eliott Yoo, John You
+Date: 12/11/2021
+Section: CSE 154 AE: Tim Mandzyuk & Nikola Bojanic
+
+This is the styles.css page for our BoostYou website. It includes a pink and white color background
+theme with beige colored listing cards.
+*/
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: pink;
+  padding: 10px;
+}
+
+header h1 {
+  margin-right: 10rem;
+  margin-left: 2rem;
+}
+
+nav {
+  margin-left: auto;
+  margin-right: 15rem;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+#listing-view h2 {
+  text-align: center;
+}
+
+#listings {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+button, .button {
+  background-color: rgba(247, 153, 76, 0.904);
+  border: none;
+  padding: 1rem;
+}
+
+.card {
+  margin-left: 1rem;
+  background-color: moccasin;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 20rem;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-width: 0.3px;
+  border-color: rgba(128, 128, 128, 0.952);
+}
+
+.transaction {
+  display: flex;
+  flex-direction: row;
+  border-color: plum;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.transaction-text {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.card:hover, button:hover, .button:hover {
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+button:hover, .button:hover {
+  background-color: rgb(224, 86, 86);
+}
+
+#search-term {
+  margin-right: 1rem;
+}
+
+#login-screen, #creation-screen, #listing-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#confirmation {
+  margin-top: 10px;
+}
+
+#purchase-confirmation button {
+  margin-right: 10px;
+}
